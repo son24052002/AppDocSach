@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AppDocSach</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home fragment</string>
+    <string name="profile_fragment">profile fragment</string>
+    <string name="setting_fragment">setting fragment</string>
+    <string name="trang_chu">Trang chủ</string>
+    <string name="search">Tìm kiếm</string>
+
 </resources>
