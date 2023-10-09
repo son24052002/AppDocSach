@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppDocSach"
         tools:targetApi="31">
         <activity
+            android:name=".Deatail_BookActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChoiceTopic"
             android:exported="false" />
         <activity
