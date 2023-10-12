@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:fitsSystemWindows="true"
 
     android:layout_width="match_parent"
-
-    android:layout_height="match_parent"
-    android:background="#BCA8A8"
-    android:fitsSystemWindows="true"
-    android:focusable="auto">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
 
         android:layout_height="192dp"
-        android:fitsSystemWindows="true">
+        android:layout_width="match_parent">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
+            app:toolbarId="@+id/toolbar"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
 
-            app:toolbarId="@+id/toolbar">
+            app:contentScrim="?attr/colorPrimary">
 
             <ImageView
                 android:id="@+id/app_bar_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                android:backgroundTint="#DC9C9C"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background1"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                android:src="@android:drawable/sym_def_app_icon"
+                android:scaleType="centerCrop" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"></androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -47,17 +43,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        app:behavior_overlapTop="32dp"
+
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-
         <TextView
-            android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chuyện kể về anh " />
-    </androidx.core.widget.NestedScrollView>
+            android:text="Có biết bao nhiêu văn bản hay về mọi loại đề tài: thiên nhiên, quê hương, gia đình,... Và nhiều nhất vẫn là công lao của Bác đối với dân tộc. Tình cảm của nhân dân với Hồ Chí Minh đặc biệt như thế nào, điều này không mới. Riêng, trong thơ, ta đã cảm nhận được ở Tố Hữu, Minh Huệ,... và lần này thì ở Viễn Phương. Thơ Viễn Phương có một phong cách độc đáo: vừa giàu chất liệu tâm trạng vừa giàu chất suy tưởng, vừa hiện thực vừa trữ tình, vừa hồn nhiên vừa mơ mộng... nghĩa là những cung bậc khác nhau, pha trộn vào nhau. Sự đa dạng này phản ánh tính phong phú của đối tượng được tái hiện ở trong thơ. Hồ Chí Minh vừa lớn lao vừa bình dị biết nhường nào. Vì thế, nhà thơ dường như không thể nào làm khác. Mạch cảm hứng toàn bài dựa trên trục thời gian hình thành một thứ nhật kí, một cuộc viếng thăm cũng là một cuộc hành hương về nơi cội nguồn. Hoà cùng dòng cảm hứng viết về sự ra đi của Người trong những ngày tháng chín năm 1969, qua bài thơ Viếng lăng Bác, nhà thơ Viễn Phương đã nói lên tấm lòng của đồng bào miền Nam cũng như muốn nói Bác bất tử trong niềm thương kính của nhân dân. Viết về lần thăm viếng một con người vĩ đại, dòng cảm xúc của bài thơ đi theo trình tự thời gian nhưng chủ yếu cảm xúc được gửi vào những không gian bên lăng. Bao trùm cả bài thơ là niềm xúc động thiêng liêng, thành kính, lòng biết ơn và tự hào pha lẫn nỗi xót đau của nhà thơ.
 
+Mở đầu bài thơ là lời giới thiệu giản dị mà hàm súc:
+
+Con ở miền Nam ra thăm lăng Bác
+
+Nhà thơ xưng con – một tiếng nói nghẹn ngào được nén chặt suốt hai mươi năm lăm xa cách. Một tiếng con giản dị nhưng lại như tiếng nấc xót đau. Tiếng con vừa thân thương mà lại vừa gần gũi. Người con ấy từ miền Nam, đang thực hiện ước nguyện được gặp Người..Khi sinh thời, Người vẫn nói miền Nam trong trái tim tôi và ước nguyện lớn lao của Người đó là Tổ quốc thống nhất, Bắc Nam sum vầy. Bác dành cho miền Nam một tình cảm đặc biệt:
+
+Bác nhớ miền Nam nỗi nhớ nhà
+
+Miền Nam mong Bác nỗi mong cha
+
+(Tố Hữu)
+
+Giờ đây, khi đất nước đã sạch bóng quân thù, con từ miền Nam về đây gặp Người thì Người đã đi xa. Câu thơ chỉ là lời giới thiệu giản dị, nhưng lại chứa đựng bao tiếc đau và nước mắt. Trong phút bên lăng ấy, nhà thơ bắt gặp những hàng tre:
+
+Đã thấy trong sương hàng tre bát ngát
+
+Hàng tre có thực bên lăng nhờ từ bát ngát đã trở thành hàng tre đất nước, hàng tre biểu tượng cho sức sống bền bỉ, sự kiên cường bất khuất, dáng đứng hiên ngang của dân tộc Việt Nam. Qua bão táp mưa Sa hàng tre vẫn đứng thẳng, vẫn kiên cường như những người dân Việt:
+
+Bão táp mưa sa đứng thẳng hàng.
+
+Cảm xúc dồn nén giờ bật lên thành lời:
+
+Ôi! Hàng tre xanh xanh Việt Nam
+
+Hàng tre kia đã được gắn với tên Tổ quốc, hai tiếng Việt Nam đầy thân thương. Nơi lăng Bác, ý nguyện của Người về đất nước độc lập, tự do vẫn vẹn nguyên, tươi xanh trong hình ảnh hàng tre. Nếu như dòng thơ đầu là nỗi tiếc đau của tác giả thì ba dòng thơ còn lại Viễn Phương nói về tre, nghĩ về tre và cũng là nói về Bác. Bên lăng, trong cảm xúc xúc động của nhà thơ, hình ảnh Bác gắn liền với hình ảnh đất nước kiên cường.
+
+Bác đã đi xa mãi mãi nhưng với Viễn Phương, hình ảnh Bác bất tử trong mối liên tưởng với mặt trời và tràng hoa – dòng người viếng Bác:
+
+Ngày ngày mặt trời đi qua trên lăng
+
+Thấy một mặt trời trong lăng rất đỏ.
+
+Thời gian là bất tận. Vòng tuần hoàn thời gian vẫn cứ trôi lặng lẽ. Như vầng dương chói sáng đem lại ánh sáng cho thiên nhiên, Bác là nguồn sáng của dân tộc Việt Nam. Bác là người đã rọi sáng con đường tự do dẫn cả dân tộc bước tới. Chính Bác đã mang đến sự sống cho cả một dân tộc. Phải có lòng kính yêu, chân thành, thiết tha mới có cảm xúc liên tưởng Bác với mặt trời như thế. Ví Bác với mặt trời vừa nói lên sự vĩ đại của Bác vừa nói lên sự trân trọng, tấm lòng thành kính của Bác và cũng qua hình ảnh ẩn dụ ấy còn là sự bất tử bởi Người đã hoá thân vào những gì vĩnh cửu của thiên nhiên, vũ trụ. Không chỉ so sánh bằng hình ảnh tĩnh mặt trời mà mặt trời Bác còn là một vầng dương rất đỏ. Vầng dương rực đỏ như bầu nhiệt huyết của một vị lãnh tụ suốt đời hi sinh cho Tổ quốc. Bầu nhiệt huyết ấy như vẫn chói sáng, vẫn căng tràn dù rằng con người ấy không còn. Đặt Bác trong mối liên tưởng với mặt trời dù đã là sự suy tôn cao nhất nhưng tác giả vẫn gắn thêm định ngữ rất đỏ như muôn khẳng định: Bác vẫn tồn tại, toả thắm như vầng mặt trời toả sáng.
+
+Với Viễn Phương, hình ảnh không chỉ bất tử khi được ví như mặt trời mà người còn mãi trong những dòng thương nhớ:
+
+Ngày ngày dòng người đi trong thương nhớ
+
+Trong con mắt tác giả, cảm xúc đã khiến không gian lặng không còn là không gian tự nhiên mà là không gian của lòng người, không gian thương nhớ. Một năm sau ngày đất nước thống nhất, lòng thương kính vẫn vẹn nguyên khi nhà thơ hoà cùng dòng người viếng Bác. Sự ra đi của Người như mới chỉ là ngày hôm qua. Tất cả vẫn như còn lại đó, không đổi thay, xoay chuyển, vẫn luôn là dòng người với nỗi đau, cảm giác mất mát, thiếu vắng. Từ hình ảnh thực ấy, tác giả liên tưởng dòng người như kết thành tràng hoa. Tuy không còn nữa nhưng sự ra đi của Người lại gắn kết những người còn sống theo đúng ước nguyện của Người:
+
+Kết tràng hoa dâng bảy mươi chín mùa xuân…
+
+Dòng người không chỉ đến viếng một Người đã khuất mà viếng một cuộc đời bảy mươi chín mùa xuân. Nhà thơ không gọi bằng tuổi mà nói bằng mùa xuân là để hoá xuân, vĩnh cửu hoá cuộc đời Người. Bởi cuộc đời ấy đẹp như mùa xuân và mùa xuân ấy đã mang lại sức xuân cho cả một dân tộc. Cuộc đời Bác là một mùa xuân đẹp nhất trong hàng ngàn mùa xuân nhỏ của dân tộc anh hùng. Khổ thơ có sự lặp lại cấu trúc:
+
+Ngày ngày mặt trời đi qua trên lăng …
+
+Ngày ngày dòng người đi trong thương nhớ
+
+Mặt trời lặn mọc mỗi ngày trên lăng cũng như dòng người vào lăng viếng Bác vẫn còn mãi như niềm yêu kính của nhân dân và cũng bởi vậy mà Bác Hồ là bất tử.
+
+Theo bước chân của dòng người, nhà thơ được tiếp cận di hài Bác và cảm thấy một niềm tiếc thương vô hạn, niềm đau xót khôn nguôi:
+
+Bác nằm trong giấc ngủ bình yên
+
+Khung cảnh và không gian thanh tĩnh trong lăng như ngưng kết cả thời gian và không gian. Cả cuộc đời Bác là những chuỗi ngày dài không ngủ. Chỉ giờ đây Người mới có giấc ngủ ngàn thu yên bình. Trong không gian lăng tĩnh lặng, trang nghiêm như thế, trong dòng cảm xúc trào dâng những ý thơ, trăng vốn gắn bó với người lúc sinh thời như hiện về trong tâm tưởng:
+
+Giữa một vầng trăng sáng dịu hiền
+
+Nếu hai dòng thơ đầu là cảm xúc của nhà thơ trong phút đầu gặp Người thì hai dòng thơ sau là một nỗi xót đau:
+
+Vẫn biết trời xanh là mãi mãi
+
+Mà sao nghe nhói ở trong tim!
+
+Câu thơ như một lời tự hỏi, một câu phân vân giữa ý chí và tình cảm. Tiếng nói của ý chí vẫn biết trời xanh là mãi mãi – Người vẫn còn như trời xanh còn mãi nhưng điều đó chẳng thể ngăn được tình cảm nhói đau chợt đến Mà sao nghe nhói ở trong tim. Cặp quan hệ từ vẫn biết – mà sao diễn đạt cái diễn biến không lường được, không kiểm soát nổi cảm xúc của tác giả, của người về muộn bên di hài Người cha tôn kính.
+
+Những xót đau, thương tiếc đã trở thành ước nguyện hoá thân làm đẹp nơi yên nghỉ của Người, làm người con trung hiếu của Bác trong bài thơ:
+
+Mai về miền Nam thương trào nước mắt
+
+Thời gian phải rời xa còn rất ngắn. Không gian trở về xa cách. Và khoảng cách lòng người tuy xa mà gần. Nghĩ đến điều ấy mà nước mắt lại trào trên mi, chẳng thể nào xuôi vào trong được nữa. Nước mắt cứ trào ra, pha lẫn cả nỗi đau thương mất mát với những quyến luyến bịn rịn. Trong quãng thời gian chỉ còn được tính bằng ngày, bởi không nỡ xa Người nên tác giả ước nguyện hoá thân để ở lại bên Bác:
+
+Muốn làm con chim hót quanh lăng
+
+Bác Muốn làm đoá hoa toả hương đâu đây
+
+Muốn làm cây tre trung hiếu chốn này.
+
+Muốn được hoá thân thành con chim hót bên lăng, thành đóa hoa toả hương, thành cây tre trung hiếu cũng có nghĩa là ước nguyện để lại một thanh âm, một làn hương làm đẹp cõi Bác và lớn hơn đó là làm một cây tre trung hiếu. Khổ đầu bài thơ, từ hàng tre bên lăng liên tưởng tới hàng tre Việt Nam bất khuất, kiên cường. Giờ đây, tác giả muốn làm một cây tre trong hàng tre ấy, muốn là một người con trung hiếu di theo con đường mà Bác đã đi. Tất cả những ước nguyện đó đều đẹp đẽ, chân thành, tha thiết. Điệp ngữ muốn làm mở đầu cho những dòng thơ càng tôn lên những ước nguyện đẹp đẽ ấy.
+
+Nằm trong số rất nhiều những bài thơ viết về sự ra đi của Người, Viếng lăng Bác của nhà thơ Viễn Phương vừa mang những cái chung đó là niềm tiếc thương, xót đau vô hạn lại vừa có cả những cái rất riêng, rất đặc biệt. Cái riêng, cái đặc biệt chính bởi sự liên tưởng để bác mãi mãi là bất tử trong lòng mỗi người dân đất Việt. Bài thơ như một lời tưởng niệm với con người đã khuất. Hơn nữa, nó đã nâng tầm vóc một con người lên một tầm cao, vĩ đại."/>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
