@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class HomeFragment extends Fragment {
 
@@ -18,5 +19,7 @@ public class HomeFragment extends Fragment {
         View myview = inflater.inflate(R.layout.fragment_home, container, false);
 
         return myview;
+
+
     }
 }
