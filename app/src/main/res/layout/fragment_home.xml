@@ -29,7 +29,6 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-
                     app:layout_collapseMode="pin" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +39,7 @@
                     app:layout_collapseMode="pin">
 
                     <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,21 +50,21 @@
 
                         >
 
-                        <com.google.android.material.tabs.TabItem
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Khám phá"
-                            />
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Khám phá"-->
+<!--                            />-->
 
-                        <com.google.android.material.tabs.TabItem
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Phổ biến" />
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Phổ biến" />-->
 
-                        <com.google.android.material.tabs.TabItem
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mới nhất" />
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Mới nhất" />-->
                     </com.google.android.material.tabs.TabLayout>
 
                     <TextView
@@ -118,14 +118,28 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recycler_book"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="3"
-            tools:listitem="@layout/item_book">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:contentDescription="This is a ViewPager for displaying tab content." />
+
+
+
+
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+
+<!--            android:id="@+id/recycler_book"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--            app:spanCount="3"-->
+<!--            tools:listitem="@layout/item_book">-->
+
+
+
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
     </LinearLayout>
 </FrameLayout>
