@@ -7,6 +7,12 @@
     tools:context=".HomeFragment"
     android:background="#F5F5F5">
 
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawerLayout">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +37,8 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin" />
 
+
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
@@ -47,24 +55,11 @@
                         android:background="@drawable/background1"
                         app:tabIndicatorColor="#f5beb5"
                         app:tabTextColor="@color/black"
+                        android:contentDescription="tablayout"
 
                         >
 
-<!--                        <com.google.android.material.tabs.TabItem-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Khám phá"-->
-<!--                            />-->
 
-<!--                        <com.google.android.material.tabs.TabItem-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Phổ biến" />-->
-
-<!--                        <com.google.android.material.tabs.TabItem-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Mới nhất" />-->
                     </com.google.android.material.tabs.TabLayout>
 
                     <TextView
@@ -118,6 +113,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
@@ -128,18 +124,30 @@
 
 
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
 
-<!--            android:id="@+id/recycler_book"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--            app:spanCount="3"-->
-<!--            tools:listitem="@layout/item_book">-->
 
 
 
 
 <!--        </androidx.recyclerview.widget.RecyclerView>-->
     </LinearLayout>
+
+
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:id="@+id/navigationView"
+            >
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview" />
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </FrameLayout>
