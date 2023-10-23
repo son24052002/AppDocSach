@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         Toolbar toolbar = myview.findViewById(R.id.toolbar);
         DrawerLayout drawerLayout = myview.findViewById(R.id.drawerLayout);
         NavigationView navigationView = myview.findViewById(R.id.navigationView);
-        ListView listView = myview.findViewById(R.id.listview);
+        //ListView listView = myview.findViewById(R.id.listview);
 
         //actionToolBar();
 

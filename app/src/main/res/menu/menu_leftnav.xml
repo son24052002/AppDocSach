@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/contact"
+            android:title="Liên hệ, phản hồi"
+            />
+    </group>
+    <item android:title="Thể loại">
+        <menu>
+            <item
+                android:id="@+id/KinhTe"
+                android:title="Kinh tế"
+                />
+            <item
+                android:id="@+id/TamLy"
+                android:title="Tâm lý - Giáo dục"
+                />
+            <item
+                android:id="@+id/KiemHiep"
+                android:title="Kiếm hiệp"
+                />
+            <item
+                android:id="@+id/NgonTinh"
+                android:title="Ngôn tình"
+                />
+            <item
+                android:id="@+id/NgoaiNgu"
+                android:title="Học ngoại ngũ"/>
+            <item
+                android:id="@+id/KhoaHoc"
+                android:title="Khoa học"/>
+        </menu>
+    </item>
+</menu>
