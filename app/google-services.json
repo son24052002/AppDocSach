@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "414616585839",
+    "firebase_url": "https://appdocsach-97377-default-rtdb.firebaseio.com",
+    "project_id": "appdocsach-97377",
+    "storage_bucket": "appdocsach-97377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414616585839:android:ca4927b15030e964bb6f9a",
+        "android_client_info": {
+          "package_name": "com.example.appdocsach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoXSGBgBGcn0v_9yeBBjfuBghnmel_0io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
