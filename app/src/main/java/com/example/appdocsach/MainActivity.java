@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import com.example.appdocsach.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//24/10
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference("/");
+
+        //sua
+        databaseReference.child("name4").setValue("Dai Nam Uni5versity");
+
+        DBHandler handler = new DBHandler(MainActivity.this);
+
+        //Book book = new Book("Bồ Câu Bay Đi Tìm Bà","Walter Macken",2021,1,"Biết bao cảm hứng và tưởng tượng hẳn sẽ được khơi lên từ đây, câu chuyện về anh em nhà họ Dove - hai chú bồ câu bé nhỏ, gan dạ - bỏ nhà vượt biển, tìm kiếm một ngôi làng không biết tên, ở một đất nước không quen thuộc, để đến với bà ngoại - biểu tượng của tình yêu thương mà chúng luôn khao khát.","drawable/bocaubayditimba.jpg");
+
+        //handler.addBook(book);
         bottomNavigationView = findViewById(R.id.bottom_NavigationView);
         //frameLayout = findViewById(R.id.frame_layout);
 

@@ -15,5 +15,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AppDocSach"
-include(":app")
+include(":app",":adminapp")
  
