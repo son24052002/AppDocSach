@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <uses-permission android:name="android.permission.INTERNET" />-->
-<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
-            android:name=".UploadImgActivity"
+            android:name=".CategoryAddActivity"
             android:exported="false" />
+
         <activity
             android:name=".UploadImageActivity"
             android:exported="false" />

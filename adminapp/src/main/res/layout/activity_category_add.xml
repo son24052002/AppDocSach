@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryAddActivity"
+    android:background="@drawable/back01">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_toolbar01">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="TODO"
+            android:minWidth="50dp"
+            android:minHeight="50dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_back_white" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon"
+            android:layout_centerHorizontal="true"
+            android:text="Thêm mới thể loại"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/CatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp"
+        app:hintEnabled="false"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/edtCatAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/shape_edittext01"
+            android:hint="Tên thể loại"
+            android:textColor="@color/black"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#219bcc"
+        android:minHeight="50dp"
+        android:text="Xác nhận"
+        app:layout_constraintTop_toBottomOf="@id/CatTitle"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:id="@+id/btnSubmit"
+
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
