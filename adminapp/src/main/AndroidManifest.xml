@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
+            android:name=".ActivityOne"
+            android:exported="false" />
+        <activity
+            android:name=".activity_Dashboard"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
