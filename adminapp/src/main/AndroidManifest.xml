@@ -9,11 +9,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
+
             android:name=".CategoryAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".uploadbook"
+            android:exported="false" />
+        <activity
+            android:name=".loginadmin"
             android:exported="false" />
 
         <activity
             android:name=".UploadImageActivity"
+
             android:exported="false" />
         <activity
             android:name=".MainActivity"
