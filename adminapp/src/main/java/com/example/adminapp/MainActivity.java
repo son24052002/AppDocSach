@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button1);
         Button btnAddCat = findViewById(R.id.button2);
+        Button btnAddBook = findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAddBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PdfAddActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
