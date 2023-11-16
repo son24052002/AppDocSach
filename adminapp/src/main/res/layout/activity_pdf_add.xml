@@ -141,10 +141,34 @@
         android:textSize="16sp"
         />
 
+    <ImageView
+        android:id="@+id/imgBook"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCat"
+        android:src="@drawable/no_img"/>
+
+    <Button
+        android:id="@+id/btnSelectImg"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#219bcc"
+        android:text="Chọn ảnh"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@id/imgBook"
+        app:layout_constraintTop_toBottomOf="@+id/tvCat" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvCat"
+        app:layout_constraintTop_toBottomOf="@id/imgBook"
         android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
