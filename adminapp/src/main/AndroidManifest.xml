@@ -10,8 +10,21 @@
         android:theme="@style/Theme.AppDocSach">
         <activity
 
+
             android:name=".ActivityOne"
+
             android:exported="false" />
+        <activity
+            android:name=".CategoriesListActivity"
+            android:exported="false"
+            />
+        <activity
+            android:name=".PdfListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PdfAddActivity"
+            android:exported="false" />
+
         <activity
             android:name=".activity_Dashboard"
 
@@ -27,10 +40,8 @@
         <activity
             android:name=".loginadmin"
             android:exported="false" />
-
         <activity
             android:name=".UploadImageActivity"
-
 
             android:exported="false" />
         <activity

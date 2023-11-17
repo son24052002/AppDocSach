@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.child("name6").setValue("Dai Nam University88");
         Button button = findViewById(R.id.button1);
         Button btnAddCat = findViewById(R.id.button2);
+        Button btnAddBook = findViewById(R.id.button3);
+        Button btnListCat = findViewById(R.id.button4);
+
 
         Button button1 = findViewById(R.id.button10);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,5 +59,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAddBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PdfAddActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnListCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoriesListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
