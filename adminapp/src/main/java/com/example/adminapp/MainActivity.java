@@ -25,12 +25,32 @@ public class MainActivity extends AppCompatActivity {
 
         //sua
         databaseReference.child("name6").setValue("Dai Nam University88");
+        Button button = findViewById(R.id.button1);
+        Button btnAddCat = findViewById(R.id.button2);
 
-        Button button1 = findViewById(R.id.button);
+        Button button1 = findViewById(R.id.button10);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, activity_Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UploadImageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAddCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoryAddActivity.class);
+
                 startActivity(intent);
             }
         });
