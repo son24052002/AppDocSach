@@ -9,40 +9,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
-
-
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActivityOne"
-
             android:exported="false" />
         <activity
             android:name=".CategoriesListActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".PdfListActivity"
             android:exported="false" />
         <activity
             android:name=".PdfAddActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity_Dashboard"
-
-
-
-        android:exported="false" />
+            android:exported="false" />
         <activity
             android:name=".CategoryAddActivity"
-            android:exported="false"
-            />
-
-
+            android:exported="false" />
         <activity
             android:name=".loginadmin"
             android:exported="false" />
         <activity
             android:name=".UploadImageActivity"
-
             android:exported="false" />
         <activity
             android:name=".MainActivity"
