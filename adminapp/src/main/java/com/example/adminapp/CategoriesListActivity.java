@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.adminapp.Adapter.CategoryAdapter;
 import com.example.adminapp.Model.Category;
@@ -30,6 +31,13 @@ public class CategoriesListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_categories_list);
 
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         loadCategories();
     }
 
@@ -52,6 +60,10 @@ public class CategoriesListActivity extends AppCompatActivity {
                 }
                 //setup adapter
                 categoryAdapter = new CategoryAdapter(CategoriesListActivity.this, categoryArrayList);
+
+                //set adapter to recycleview
+                RecyclerView recyclerView = findViewById(R.id.categoryRV);
+                recyclerView.setAdapter(categoryAdapter);
 
                 //set adapter to recycleview
                 RecyclerView recyclerView = findViewById(R.id.categoryRV);

@@ -25,10 +25,15 @@
                 android:id="@+id/pdfView"
                 />
 
-            <ProgressBar
+<!--            <ProgressBar-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:id="@+id/progressBar"/>-->
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/progressBar"/>
+                android:id="@+id/imgBook"
+                android:src="@drawable/ic_image"/>
         </RelativeLayout>
 
         <TextView

@@ -1,19 +1,22 @@
 package com.example.adminapp.Model;
 
 public class Book {
-    String id, BookTitle, CategoryId, urlImg, urlPdf;
+    String id, BookTitle, CategoryId, urlImg, urlPdf, BookDes;
     long timestamp;
 
     public Book() {
     }
 
-    public Book(String id, String bookTitle, String categoryId, String urlImg, String urlPdf, long timestamp) {
+
+
+    public Book(String id, String bookTitle, String categoryId, String urlImg, String urlPdf, long timestamp, String bookDes) {
         this.id = id;
         BookTitle = bookTitle;
         CategoryId = categoryId;
         this.urlImg = urlImg;
         this.urlPdf = urlPdf;
         this.timestamp = timestamp;
+        this.BookDes = bookDes;
     }
 
     public String getId() {
@@ -62,5 +65,12 @@ public class Book {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+    }
+    public String getBookDes() {
+        return BookDes;
+    }
+
+    public void setBookDes(String bookDes) {
+        BookDes = bookDes;
     }
 }
