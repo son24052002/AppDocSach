@@ -1,7 +1,7 @@
 package com.example.adminapp.Model;
 
 public class Book {
-    String id, BookTitle, CategoryId, urlImg, urlPdf, BookDes;
+    String id, BookTitle, CategoryId, imgUrl, url, BookDescription;
     long timestamp;
 
     public Book() {
@@ -9,14 +9,38 @@ public class Book {
 
 
 
-    public Book(String id, String bookTitle, String categoryId, String urlImg, String urlPdf, long timestamp, String bookDes) {
+    public Book(String id, String bookTitle, String categoryId, String imgUrl, String urlPdf, long timestamp, String BookDescription) {
         this.id = id;
-        BookTitle = bookTitle;
-        CategoryId = categoryId;
-        this.urlImg = urlImg;
-        this.urlPdf = urlPdf;
+        this.BookTitle = bookTitle;
+        this.CategoryId = categoryId;
+        this.imgUrl = imgUrl;
+        this.url = urlPdf;
         this.timestamp = timestamp;
-        this.BookDes = bookDes;
+        this.BookDescription = BookDescription;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getBookDescription() {
+        return BookDescription;
+    }
+
+    public void setBookDescription(String bookDescription) {
+        BookDescription = bookDescription;
     }
 
     public String getId() {
@@ -43,21 +67,9 @@ public class Book {
         CategoryId = categoryId;
     }
 
-    public String getUrlImg() {
-        return urlImg;
-    }
 
-    public void setUrlImg(String urlImg) {
-        this.urlImg = urlImg;
-    }
 
-    public String getUrlPdf() {
-        return urlPdf;
-    }
 
-    public void setUrlPdf(String urlPdf) {
-        this.urlPdf = urlPdf;
-    }
 
     public long getTimestamp() {
         return timestamp;
@@ -66,11 +78,5 @@ public class Book {
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
-    public String getBookDes() {
-        return BookDes;
-    }
 
-    public void setBookDes(String bookDes) {
-        BookDes = bookDes;
-    }
 }

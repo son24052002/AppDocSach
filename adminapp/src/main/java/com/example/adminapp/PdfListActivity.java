@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ImageButton;
 
+import com.example.adminapp.Adapter.Book1Adapter;
 import com.example.adminapp.Adapter.BookAdapter;
 import com.example.adminapp.Model.Book;
 import com.google.firebase.database.DataSnapshot;
@@ -36,22 +38,37 @@ public class PdfListActivity extends AppCompatActivity {
             }
         });
 
+        Log.d("PdfListActivity", "onCreate");
         loadListBook();
     }
 
     private void loadListBook() {
+        Log.d("PdfListActivity", "loadListBook");
+
         bookArrayList = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Books");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("PdfListActivity", "onDataChange - DataSnapshot: " + snapshot);
+
                 bookArrayList.clear();
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    //getdata
+                    //get data
                     Book model = dataSnapshot.getValue(Book.class);
+                    if (model != null) {
+                        String urlImg = model.getImgUrl();
+                        String CategoryID = model.getCategoryId();
+                        Log.d("DataSnapshot", "URL from DataSnapshot: " + urlImg);
+                        Log.d("DataSnapshot", "cat from DataSnapshot: " + CategoryID);
+                        // Tiếp tục xử lý...
+                    }
                     //add data
                     bookArrayList.add(model);
                 }
+                // Kiểm tra xem liệu có dữ liệu trong bookArrayList không
+                Log.d("PdfListActivity", "onDataChange - bookArrayList size: " + bookArrayList.size());
+
                 //setup adapter
                 bookAdapter = new BookAdapter(PdfListActivity.this, bookArrayList);
                 //set adapter to recycleview

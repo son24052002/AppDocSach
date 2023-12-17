@@ -9,6 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -18,7 +22,7 @@
             android:name=".ActivityOne"
             android:exported="false" />
         <activity
-            android:name=".CategoriesListActivity"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
             android:name=".PdfListActivity"
@@ -27,7 +31,7 @@
             android:name=".PdfAddActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_Dashboard"
+            android:name=".CategoriesListActivity"
             android:exported="false" />
         <activity
             android:name=".CategoryAddActivity"
@@ -39,7 +43,7 @@
             android:name=".UploadImageActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_Dashboard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,37 +11,32 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <RelativeLayout
+<!--        <RelativeLayout-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="140dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:background="#6c6c6f"-->
+<!--            android:id="@+id/pdfRL"-->
+<!--            >-->
+
+<!--            -->
+<!--&lt;!&ndash;            <ProgressBar&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/progressBar"/>&ndash;&gt;-->
+
+<!--        </RelativeLayout>-->
+        <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:layout_marginEnd="5dp"
-            android:background="#6c6c6f"
-            android:id="@+id/pdfRL"
-            >
-
-            <com.github.barteksc.pdfviewer.PDFView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/pdfView"
-                />
-
-<!--            <ProgressBar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:id="@+id/progressBar"/>-->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/imgBook"
-                android:src="@drawable/ic_image"/>
-        </RelativeLayout>
-
+            android:id="@+id/imgBook_rowbook"
+            android:src="@drawable/ic_image"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bookName"
             android:text="Book Name"
-            android:layout_toEndOf="@id/pdfRL"
+            android:layout_toEndOf="@id/imgBook_rowbook"
             android:layout_toStartOf="@id/btnMore"
             android:maxLines="1"
             android:textSize="18sp"
@@ -55,7 +50,7 @@
             android:id="@+id/bookDes"
             android:text="Book Description"
             android:layout_toStartOf="@id/btnMore"
-            android:layout_toEndOf="@id/pdfRL"
+            android:layout_toEndOf="@id/imgBook_rowbook"
             android:layout_below="@id/bookName"
             android:maxLines="3"/>
 
@@ -64,7 +59,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Category"
             android:text="Category"
-            android:layout_toEndOf="@id/pdfRL"
+            android:layout_toEndOf="@id/imgBook_rowbook"
             android:maxLines="1"
             android:layout_alignParentBottom="true"/>
 
@@ -79,6 +74,7 @@
             android:minHeight="50dp"
             android:background="@android:color/transparent"
             />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

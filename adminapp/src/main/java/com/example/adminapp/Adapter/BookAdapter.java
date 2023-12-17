@@ -2,6 +2,7 @@ package com.example.adminapp.Adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.example.adminapp.Model.Book;
 import com.example.adminapp.R;
@@ -59,7 +61,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
         //getdata
         Book model = bookArrayList.get(position);
         String bookTitle = model.getBookTitle();
-        String bookDes = model.getBookDes();
+        String bookDes = model.getBookDescription();
 
         //setdata
         holder.bookName.setText(bookTitle);
@@ -67,49 +69,30 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
 
         //load data
         loadCategory(model, holder);
-        loadPdfFromUrl(model, holder);
+//        loadPdfFromUrl(model, holder);
         loadImgFromUrl(model, holder);
 
 
     }
 
     private void loadImgFromUrl(Book model, HolderBookAdmin holder) {
-        String urlImg = model.getUrlImg();
-//        StorageReference ref = FirebaseStorage.getInstance().getReferenceFromUrl(urlImg);
-//        ref.getMetadata()
-//                .addOnSuccessListener(new OnSuccessListener<StorageMetadata>() {
-//                    @Override
-//                    public void onSuccess(StorageMetadata storageMetadata) {
-//
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(context, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("imgUrl");
-        ref.child(urlImg)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Glide.with(context)
-                                .load(urlImg)
-                                .into(holder.imgBook);
 
-                    }
+        String urlImg = model.getImgUrl();
+        Log.d("loadImgFromUrl", "URL: " + urlImg);
+        if (urlImg != null && !urlImg.isEmpty()) {
+            Log.d("loadImgFromUrl", "URL: " + urlImg);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+            Glide.with(context)
+                    .load(urlImg)
+
+                    .into(holder.imgBook);
+        } else {
+            Log.e("loadImgFromUrl", "Invalid URL");
+        }
     }
 
-    private void loadPdfFromUrl(Book model, HolderBookAdmin holder) {
 
-    }
 
     private void loadCategory(Book model, HolderBookAdmin holder) {
         String CatId = model.getCategoryId();
@@ -119,7 +102,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         //get category
-                        String category = ""+snapshot.child("Categories").getValue();
+                        String category = ""+snapshot.child("categoryName").getValue();
 
                         //set category for textview
                         holder.Category.setText(category);
@@ -142,7 +125,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
 
         //UI view
         PDFView pdfView;
-        ProgressBar progressBar;
+
         TextView bookName;
         TextView bookDes;
         TextView Category;
@@ -152,13 +135,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
         public HolderBookAdmin(@NonNull View itemView) {
             super(itemView);
 
-            pdfView = itemView.findViewById(R.id.pdfView);
+//            pdfView = itemView.findViewById(R.id.pdfView);
             //progressBar = itemView.findViewById(R.id.progressBar);
             bookName = itemView.findViewById(R.id.bookName);
             bookDes = itemView.findViewById(R.id.bookDes);
             Category = itemView.findViewById(R.id.Category);
             btnMore = itemView.findViewById(R.id.btnMore);
-            imgBook = itemView.findViewById(R.id.imgBook);
+            imgBook = itemView.findViewById(R.id.imgBook_rowbook);
 
         }
     }

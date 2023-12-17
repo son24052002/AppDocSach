@@ -65,9 +65,7 @@ public class CategoriesListActivity extends AppCompatActivity {
                 RecyclerView recyclerView = findViewById(R.id.categoryRV);
                 recyclerView.setAdapter(categoryAdapter);
 
-                //set adapter to recycleview
-                RecyclerView recyclerView = findViewById(R.id.categoryRV);
-                recyclerView.setAdapter(categoryAdapter);
+
             }
 
             @Override
