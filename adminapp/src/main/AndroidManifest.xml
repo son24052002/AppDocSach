@@ -9,9 +9,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSach">
         <activity
+            android:name=".BookUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

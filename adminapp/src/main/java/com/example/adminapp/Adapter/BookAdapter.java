@@ -1,6 +1,9 @@
 package com.example.adminapp.Adapter;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +25,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.example.adminapp.BookUpdateActivity;
 import com.example.adminapp.Model.Book;
 import com.example.adminapp.R;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -41,12 +46,15 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
     //context
     private Context context;
     private ArrayList<Book> bookArrayList;
-    //view binding
+    private ProgressDialog progressDialog;
 
 
     public BookAdapter(Context context, ArrayList<Book> bookArrayList) {
         this.context = context;
         this.bookArrayList = bookArrayList;
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle("Vui lòng đợi");
+        progressDialog.setCanceledOnTouchOutside(false);
     }
 
     @NonNull
@@ -72,7 +80,105 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.HolderBookAdmi
 //        loadPdfFromUrl(model, holder);
         loadImgFromUrl(model, holder);
 
+        holder.btnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moreOpitionsDialog(model, holder);
+            }
+        });
 
+    }
+
+    private void moreOpitionsDialog(Book model, HolderBookAdmin holder) {
+        String bookId = model.getId();
+        String bookUrl = model.getUrl();
+        String imgUrl = model.getImgUrl();
+        String bookTitle = model.getBookTitle();
+
+        //option dialog
+        String[] options = {"Cập nhật", "Xóa"};
+
+        //elrt dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Chọn")
+                .setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(which==0){
+                            //sang activity sua
+                            Intent intent = new Intent(context, BookUpdateActivity.class);
+                            intent.putExtra("bookId", bookId );
+                            intent.putExtra("imgUrl", imgUrl);
+                            context.startActivity(intent);
+                        } else if (which==1) {
+                            //xoa
+                            deleteBook(model, holder);
+                        }
+                    }
+                })
+                .show();
+    }
+
+    private void deleteBook(Book model, HolderBookAdmin holder) {
+        String bookId = model.getId();
+        String bookUrl = model.getUrl();
+        String imgUrl = model.getImgUrl();
+        String bookTitle = model.getBookTitle();
+
+        Log.d("deleteBook", "deleting");
+        progressDialog.setMessage("Đang xóa "+bookTitle);
+        progressDialog.show();
+
+        Log.d("deletebook","delete from storage");
+        StorageReference bookRef = FirebaseStorage.getInstance().getReferenceFromUrl(bookUrl);
+        bookRef.delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d("deleteStorageBook", "success");
+                        //xoa anh trong storage
+                        StorageReference imgRef = FirebaseStorage.getInstance().getReferenceFromUrl(imgUrl);
+                        imgRef.delete()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d("deleteStorageImage", "success");
+                                Log.d("deletebook", "xoa db");
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Books");
+                                reference.child(bookId)
+                                        .removeValue()
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressDialog.dismiss();
+                                                Toast.makeText(context, "Xóa thành công",Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("deleteStorageBook", "erorr"+e.getMessage());
+                                                progressDialog.dismiss();
+                                                Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                            }
+                        })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d("deleteStorageImage", "error"+e.getMessage());
+                                    }
+                                });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("deleteStorageBook", "error"+e.getMessage());
+                    }
+                });
     }
 
     private void loadImgFromUrl(Book model, HolderBookAdmin holder) {
